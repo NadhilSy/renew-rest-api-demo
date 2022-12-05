@@ -15,5 +15,5 @@ public interface ICourseService {
     List<Course> getBy(String key, String value);
     List<Course> findByTitleContains(String value);
     List<Course> findByDescriptionContains(String value);
-    Page<Course> list(Integer page, Integer size, String direction, String sortBy);
+    Page<Course> getAll(Integer page, Integer size, String direction, String sortBy);
 }

@@ -72,7 +72,11 @@ public class CourseService implements ICourseService {
     }
 
     @Override
-    public Page<Course> list(Integer page, Integer size, String direction, String sortBy) {
-        return null;
+
+    public Page<Course> getAll(Integer page, Integer size, String direction, String sortBy) {
+        Sort sort = Sort.by(Sort.Direction.valueOf(direction), sortBy);
+        Pageable pageable = PageRequest.of((page), size, sort);
+        Page<Course> result = courseRepository.findAll(pageable);
+        return result;
     }
 }

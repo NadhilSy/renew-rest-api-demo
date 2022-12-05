@@ -3,11 +3,13 @@ package com.enigmacamp.rest.controller;
 import com.enigmacamp.rest.dto.CourseRequestDTO;
 import com.enigmacamp.rest.model.Course;
 import com.enigmacamp.rest.response.ErrorResponse;
+import com.enigmacamp.rest.response.PagingResponse;
 import com.enigmacamp.rest.response.SuccessResponse;
 import com.enigmacamp.rest.service.course.CourseService;
 import com.enigmacamp.rest.service.course.ICourseService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -44,12 +46,30 @@ public class CourseController {
 
     }
 
+    //deprecated, diantikan oleh getAllCOurse with param
     //simple getall
-    @GetMapping
+/*    @GetMapping
     public ResponseEntity getAllCourse() {
         try {
             List<Course> courses = service.getAll();
             return ResponseEntity.status(HttpStatus.OK).body(new SuccessResponse<>("Success get all Courses", courses));
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("404", e.getMessage()));
+        }
+    }
+*/
+
+    //getall with param
+    @GetMapping(params = {"page","size","direction","sortBy"})
+    public ResponseEntity getAllCourse(
+        @RequestParam(defaultValue = "1") Integer page,
+        @RequestParam(defaultValue = "5") Integer size,
+        @RequestParam(defaultValue = "DESC",required = false) String direction,
+        @RequestParam(defaultValue = "id",required = false) String sortBy
+    ){
+        try {
+            Page<Course> pageCourses = service.getAll(page, size, direction, sortBy);
+            return ResponseEntity.status(HttpStatus.OK).body(new PagingResponse<>("Ok",pageCourses));
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("404", e.getMessage()));
         }
