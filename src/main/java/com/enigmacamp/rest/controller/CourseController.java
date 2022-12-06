@@ -46,6 +46,19 @@ public class CourseController {
 
     }
 
+
+    @GetMapping("/{by}")
+    public ResponseEntity getBy(@RequestParam String key, @RequestParam String value){
+
+        List<Course> result;
+        try {
+            result = service.getBy(key, value);
+            return ResponseEntity.status(HttpStatus.OK).body(new SuccessResponse<>("Success response delete row", result));
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new SuccessResponse<>("404", e.getMessage()));
+        }
+    }
+
     //deprecated, diantikan oleh getAllCOurse with param
     //simple getall
 /*    @GetMapping
@@ -59,13 +72,13 @@ public class CourseController {
     }
 */
 
-    //getall with param
-    @GetMapping(params = {"page","size","direction","sortBy"})
+    //getall with param with page
+    @GetMapping
     public ResponseEntity getAllCourse(
         @RequestParam(defaultValue = "1") Integer page,
         @RequestParam(defaultValue = "5") Integer size,
-        @RequestParam(defaultValue = "DESC",required = false) String direction,
-        @RequestParam(defaultValue = "id",required = false) String sortBy
+        @RequestParam(defaultValue = "DESC") String direction,
+        @RequestParam(defaultValue = "id") String sortBy
     ){
         try {
             Page<Course> pageCourses = service.getAll(page, size, direction, sortBy);

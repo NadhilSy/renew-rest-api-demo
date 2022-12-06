@@ -10,7 +10,7 @@ public interface ICourseService {
     Course create(Course course);
     Course get(String id) throws Exception;
     void update(Course course, String id) ;
-    Course delete(String id) throws Exception;
+    Course delete(String key, String value);
 
     List<Course> getBy(String key, String value);
     List<Course> findByTitleContains(String value);
