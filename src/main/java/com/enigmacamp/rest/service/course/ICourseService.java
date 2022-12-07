@@ -1,5 +1,6 @@
 package com.enigmacamp.rest.service.course;
 
+import com.enigmacamp.rest.dto.CourseRequestDTO;
 import com.enigmacamp.rest.model.Course;
 import org.springframework.data.domain.Page;
 
@@ -9,8 +10,8 @@ public interface ICourseService {
     List<Course> getAll() throws Exception;
     Course create(Course course);
     Course get(String id) throws Exception;
-    void update(Course course, String id) ;
-    Course delete(String key, String value);
+    Course update(CourseRequestDTO course, String id) ;
+    Course delete(String id) ;
 
     List<Course> getBy(String key, String value);
     List<Course> findByTitleContains(String value);

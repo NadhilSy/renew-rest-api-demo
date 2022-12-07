@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1036e29c-7fd4-4ffc-9907-9e560ad03f0b" name="Changes" comment="Second Commit, add feature pagination on findall, and deprecated simple findall">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="1036e29c-7fd4-4ffc-9907-9e560ad03f0b" name="Changes" comment="Third Commit, add feature find by key and value">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/controller/CourseInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/controller/CourseTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/dto/CourseInfoRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/dto/CourseTypeRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/controller/CourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/course/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/course/CourseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/course/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/course/ICourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/courseinfo/CourseInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/courseinfo/CourseInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/courseinfo/ICourseInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/courseinfo/ICourseInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/coursetype/CourseTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/coursetype/CourseTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/coursetype/ICourseTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/rest/service/coursetype/ICourseTypeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +67,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
@@ -105,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670264256264</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Third Commit, add feature find by key and value">
+      <created>1670290376150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670290376150</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit, implement feature create and findall on course" />
     <MESSAGE value="Second Commit, add feature pagination on findall, and deprecated simple findall" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Commit, add feature pagination on findall, and deprecated simple findall" />
+    <MESSAGE value="Third Commit, add feature find by key and value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third Commit, add feature find by key and value" />
   </component>
 </project>

@@ -46,6 +46,29 @@ public class CourseController {
 
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteCourse(@PathVariable ("id") String id){
+        try {
+            Course newCourse = service.delete(id);
+            return ResponseEntity.status(HttpStatus.OK).body(new SuccessResponse<>("Success create course", newCourse));
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("X01", e.getMessage()));
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity updateCourse(@Valid @RequestBody CourseRequestDTO courseRequest, @PathVariable("id") String id){
+        try {
+//            Course newCourse = modelMapper.map(courseRequest, Course.class);
+//            System.out.println(newCourse);
+            Course result = service.update(courseRequest, id);
+            System.out.println(result);
+            return ResponseEntity.status(HttpStatus.OK).body(new SuccessResponse<>("Success create course", result));
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("X01", e.getMessage()));
+        }
+    }
+
 
     @GetMapping("/{by}")
     public ResponseEntity getBy(@RequestParam String key, @RequestParam String value){

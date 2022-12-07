@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ICourseTypeService {
 
-    List<CourseType> list() throws Exception;
+    List<CourseType> getAll() throws Exception;
     CourseType create(CourseType courseType);
 }
